@@ -1,8 +1,13 @@
+import Home from "./pages/Home";
 
 function App() {
-  return <div className="App h-screen bg-blue-400 flex justify-center items-center ">
-    <h1 className="text-white">Init Project</h1>
-  </div>;
+  return (
+    <div className="">
+
+      <Home/>
+
+    </div>
+  )
 }
 
 export default App;
