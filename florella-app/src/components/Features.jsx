@@ -27,9 +27,9 @@ const services = [
 
 const Features = () => {
   return (
-    <div className='flex gap-[100px] justify-center my-10'>
+    <div className='flex gap-[170px] justify-center my-10'>
       {services.map((service) => (
-        <div className="py-9 px-5 flex flex-col items-center gap-3 text-[#034032]">
+        <div key={service.id} className="py-9 px-5 flex flex-col items-center gap-3 text-[#034032]">
           {service.icon}
           <p className='text-[#1B1B1B] max-w-[100px] text-center font-semibold'>{service.title}</p>
         </div>
