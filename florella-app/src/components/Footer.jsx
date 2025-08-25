@@ -1,70 +1,114 @@
+import { Facebook, Instagram, Phone, Mail, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router"
+
 const Footer = () => {
+  const navigationLinks = [
+    { label: "Catalog", href: "/catalog" },
+    { label: "Payment", href: "/payment" },
+    { label: "Reviews", href: "/reviews" },
+    { label: "Contacts", href: "/contacts" },
+    { label: "Company", href: "/company" },
+  ];
+
   return (
-         <div className='bg-[#F6F9Fc] text-gray-500/80 pt-8 px-6 md:px-16 lg:px-24 xl:px-32'>
-            <div className='flex flex-wrap justify-between gap-12 md:gap-6'>
-                <div className='max-w-80'>
-                    <img src="" alt="logo" className='mb-4 h-8 md:h-9 invert opacity-80' />
-                    <p className='text-sm'>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-                    </p>
-                    <div className='flex items-center gap-3 mt-4'>
-                        {/* Instagram */}
-                        <img src="" alt="instagram-icon" className='w-6' />
-                        <img src="" alt="facebook-icon" className='w-6' />
-                        <img src="" alt="twitter-icon" className='w-6' />
-                        <img src="" alt="linkendin-icon" className='w-6' />
-                        
-                    </div>
-                </div>
+    <footer className="bg-footer text-footer-foreground py-15 px-4 bg-[#1B1B1B] text-[#F5F5F5]">
+      <div className="max-w-6xl mx-auto">
 
-                <div>
-                    <p className='font-playfair text-lg text-gray-800'>COMPANY</p>
-                    <ul className='mt-3 flex flex-col gap-2 text-sm'>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Partners</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <p className='font-playfair text-lg text-gray-800'>SUPPORT</p>
-                    <ul className='mt-3 flex flex-col gap-2 text-sm'>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Safety Information</a></li>
-                        <li><a href="#">Cancellation Options</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Accessibility</a></li>
-                    </ul>
-                </div>
-
-                <div className='max-w-80'>
-                    <p className='font-playfair text-lg text-gray-800'>STAY UPDATED</p>
-                    <p className='mt-3 text-sm'>
-                        Subscribe to our newsletter for inspiration and special offers.
-                    </p>
-                    <div className='flex items-center mt-4 group'>
-                        <input type="text" className='bg-white rounded-l border border-gray-300 h-9 px-3 outline-none' placeholder='Your email' />
-                        <button className='group flex items-center justify-center bg-black h-9 w-9 aspect-square rounded-r'>
-                            {/* Arrow icon */}
-                          <img src="" alt="arrow-icon" className='w-3.5 invert group-hover:translate-x-1 transition-all'  />
-                        </button>
-                    </div>
-                </div>
+        <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-40 items-center">
+            
+          {/* Brand and Social */}
+          <div className="lg:col-span-1 flex justify-between items-center w-full md:flex-col">
+            <h2 className="text-3xl font-bold md:mb-4">Florella</h2>
+            <div className="flex gap-3">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full border bg-[#F5F5F5] text-[#1B1B1B] hover:bg-[#1B1B1B] hover:text-[#F5F5F5]"
+                aria-label="Facebook"
+              >
+                <Facebook size={20} />
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full border bg-[#F5F5F5] text-[#1B1B1B] hover:bg-[#1B1B1B] hover:text-[#F5F5F5]"
+                aria-label="Instagram"
+              >
+                <Instagram size={20} />
+              </Button>
             </div>
-            <hr className='border-gray-300 mt-8' />
-            <div className='flex flex-col md:flex-row gap-2 items-center justify-between py-5'>
-                <p>© {new Date().getFullYear()} NgeHotel All rights reserved.</p>
-                <ul className='flex items-center gap-4'>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Terms</a></li>
-                    <li><a href="#">Sitemap</a></li>
-                </ul>
+          </div>
+
+          <div className="flex md:flex-col lg:col-span-1 gap-5 mt-5 order-2 md:order-1 w-full justify-between">
+            {/* Navigation Links */}
+            <div className="">
+              <nav className="flex flex-col md:flex-row gap-4">
+                {navigationLinks.map((link, index) => (
+                  <Link
+                    key={index}
+                    to={link.href}
+                    className="text-footer-muted hover:text-footer-foreground transition-colors text-md"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
             </div>
+
+            {/* App Downloads and Payment */}
+            <div className="flex flex-col md:flex-row gap-3 items-center ">
+          
+                <img
+                  src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                  alt="Download on App Store"
+                  className="h-10"
+                />
+                <img
+                  src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                  alt="Get it on Google Play"
+                  className="h-14"
+                />
+      
+           
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
+                  alt="Visa"
+                  className="h-6"
+                />
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                  alt="Mastercard"
+                  className="h-6"
+                />
+          
+            </div>
+          </div>
+
+          {/* Contact Information */}
+          <div className="lg:col-span-1 space-y-3 border-l pl-3 flex flex-col order-1 md:order-2 w-full gap-2 md:gap-0">
+
+            <div className="flex items-center gap-2 text-md">
+              <Phone size={16} className="text-footer-muted" />
+              <span>+37529 555 44 87</span>
+            </div>
+
+            <div className="flex items-center gap-2 text-md">
+              <Mail size={16} className="text-footer-muted" />
+              <span>florella@gmail.com</span>
+            </div>
+
+            <div className="flex items-start gap-2 text-md">
+              <MapPin size={16} className="text-footer-muted mt-0.5" />
+              <span>Minsk, 102 Suvorova str.</span>
+            </div>
+
+          </div>
+
         </div>
+      </div>
+    </footer>
+  );
+};
 
-  )
-}
-
-export default Footer
+export default Footer;

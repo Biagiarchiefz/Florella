@@ -54,7 +54,7 @@ const CarouselCard = () => {
     >
       <CarouselContent className="flex justify-between mt-10">
         {plants.map((plant) => (
-          <CarouselItem key={plant.id} className="basis-1/3">
+          <CarouselItem key={plant.id} className="basis-1/1 md:basis-1/3">
             <div className="">
               <div className="flex flex-col gap-1">
                 <img

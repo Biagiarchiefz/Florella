@@ -4,8 +4,8 @@ import PlantCard from "./PlantCard";
 
 const CatalogPlants = () => {
   return (
-    <div className="px-6 md:px-16 lg:px-50 pt-10 pb-[100px]">
-      <Title title="Popular plants" />
+    <div className="px-6 md:px-16 lg:px-50 pt-10 md:pb-[100px]">
+      <Title title="Catalog" />
       <PlantCard/>
     </div>
   );
